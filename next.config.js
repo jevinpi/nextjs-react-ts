@@ -63,7 +63,11 @@ module.exports = withSass(withAntd({
             });
         }
 
+        // config.resolve.alias = {
+            //     styles: path.resolve(__dirname, "./styles"),
+            // }
         config.resolve.alias = {
+            ...config.resolve.alias,
             components: path.resolve(__dirname, "./components"),
             utils: path.resolve(__dirname, "./utils"),
             pages: path.resolve(__dirname, "./pages"),

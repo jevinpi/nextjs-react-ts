@@ -1,17 +1,23 @@
 import Link from 'next/link';
 import DvaConnect from '../utils/store';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Button } from 'antd';
-import 'styles/app.scss';
-import 'styles/app.less';
 import 'antd/lib/button/style';
 
+/**
+ * 16.8的数据组件
+ */
 function Index(props) {
     function calc(type) {
         props.dispatch({
             type: `app/${type}`,
         });
     }
+
+    useEffect(() => {
+        console.log('this is hook');
+    });
+
     return (
         <div>
             <p>首页11</p>

@@ -46,6 +46,7 @@ module.exports = {
         'semi': 'off',
         'react/sort-comp': 'off',
         '@typescript-eslint/no-explicit-any': 'off',
+        '@typescript-eslint/explicit-member-accessibility': ['error', { accessibility: 'no-public' }],
         '@typescript-eslint/explicit-function-return-type': 'off',
         'react/prop-types': 'off',
         // interface声明一定要以大写I开头
