@@ -14,9 +14,9 @@ const prettierConfigPath = require.resolve('../.prettierrc');
 let didError = false;
 
 let files = [];
-const scssFiles = glob.sync('**/*.scss', { ignore: ['**/node_modules/**', '**/.next/**', 'build/**'] });
-const lessFiles = glob.sync('**/*.less', { ignore: ['**/node_modules/**', '**/.next/**', 'build/**'] });
-const tsFiles = glob.sync('**/*.ts*', { ignore: ['**/node_modules/**', '**/.next/**', 'build/**'] });
+const scssFiles = glob.sync('**/*.scss', { ignore: ['**/node_modules/**', '.next/**', 'build/**'] });
+const lessFiles = glob.sync('**/*.less', { ignore: ['**/node_modules/**', '.next/**', 'build/**'] });
+const tsFiles = glob.sync('**/*.ts*', { ignore: ['**/node_modules/**', '.next/**', 'build/**'] });
 files = files.concat(scssFiles);
 files = files.concat(lessFiles);
 files = files.concat(tsFiles);
