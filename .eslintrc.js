@@ -9,6 +9,7 @@ module.exports = {
     root: true,
     parser: '@typescript-eslint/parser', // Specifies the ESLint parser
     extends: [
+        'eslint-config-prettier',
         'eslint:recommended',
         // 'plugin:@typescript-eslint/eslint-recommended',
         'plugin:@typescript-eslint/recommended', // Uses the recommended rules from the @typescript-eslint/eslint-plugin
@@ -86,6 +87,8 @@ module.exports = {
         "no-var-requires": true,
         // 类型声明的冒号之前是否需要空格
         "typedef-whitespace": false,
+        // 当最后一个元素或属性与闭括号 ] 或 } 在 不同的行时，允许（但不要求）使用拖尾逗号；当在 同一行时，禁止使用拖尾逗号。
+        "comma-dangle": ["warn", "only-multiline"],
         // 行尾不允许有空格
         "no-trailing-whitespace": true,
         // 单行注释格式化规则
@@ -120,8 +123,11 @@ module.exports = {
         // 前者的类型检查更完善
         "prefer-object-spread": 1,
         "indent": [
-            2,
-            4
+            "error",
+            4,
+            {
+                SwitchCase: 1
+            }
         ],
         // 禁止出现重复的 import
         "no-duplicate-imports": 2,
