@@ -4,6 +4,7 @@ import React, { useEffect } from 'react';
 import { Button } from 'antd';
 import 'antd/lib/button/style';
 import { createSelector } from 'reselect';
+import instance from '../api/index';
 
 /**
  * 16.8的数据组件
@@ -52,7 +53,9 @@ function Index(props) {
     }
 
     useEffect(() => {
-        console.log('this is hook');
+        instance.get('/api/cats').then(res => {
+            console.log(11111, res.data);
+        });
     });
     const { count, showtodos, undoDisabled, redoDisabled } = props;
     return (

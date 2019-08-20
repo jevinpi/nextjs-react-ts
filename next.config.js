@@ -12,7 +12,7 @@ const themeVariables = lessToJS(
 module.exports = withSass(withAntd({
     lessLoaderOptions: {
         javascriptEnabled: true,
-        modifyVars: themeVariables, // make your antd custom effective
+        modifyVars: themeVariables, // 配置antd的变量名称
     },
     cssModules: true,
     cssLoaderOptions: {
@@ -53,6 +53,7 @@ module.exports = withSass(withAntd({
                 }
             }
         })
+
         if (dev) {
             config.module.rules.push({
                 test: /\.(ts|js|tsx)$/,
@@ -63,9 +64,6 @@ module.exports = withSass(withAntd({
             });
         }
 
-        // config.resolve.alias = {
-            //     styles: path.resolve(__dirname, "./styles"),
-            // }
         config.resolve.alias = {
             ...config.resolve.alias,
             components: path.resolve(__dirname, "./components"),
